@@ -68,10 +68,8 @@ iwr -useb https://spicetify.zgqinc.gq/custom-apps.ps1 | iex
 curl -fsSL https://spicetify.zgqinc.gq/custom-apps.sh | bash
 ```
 
-* **懒人美化配置文件备份：** [点击下载 Backup.json](https://spicetify.zgqinc.gq/Marketplace-backup.json)
-  *(导入方法：顶部导航栏 `Marketplace` -> 右上角 `Marketplace Settings` -> 最底部 `Back up/Restore` -> `Open` -> `Import from file`)*
-
----
+* **懒人美化配置文件备份（已直接内置包含 [fix.css](fix.css)）：** [点击下载 Backup.json](https://spicetify.zgqinc.gq/Marketplace-backup.json)
+  *(导入方法：顶部导航栏 `Marketplace` -> 右上角 `Marketplace Settings` -> 最底部 `Back up/Restore` -> `Open` -> `Import from file`。该备份已完整打包常用美化配置及全套 [fix.css](fix.css) 样式补丁，导入即可直接生效)*
 
 ## 🎯 为什么要同时使用 SpotX 和 Spicetify？
 

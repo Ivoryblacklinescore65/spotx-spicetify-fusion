@@ -68,10 +68,8 @@ iwr -useb https://spicetify.zgqinc.gq/custom-apps.ps1 | iex
 curl -fsSL https://spicetify.zgqinc.gq/custom-apps.sh | bash
 ```
 
-* **Pre-configured Theme & Settings Backup:** [Download Backup.json](https://spicetify.zgqinc.gq/Marketplace-backup.json)
-  *(Import Guide: Top Navigation `Marketplace` -> Top Right `Marketplace Settings` -> Bottom `Back up/Restore` -> `Open` -> `Import from file`)*
-
----
+* **Pre-configured Backup (Includes [fix.css](fix.css) UI Patches):** [Download Backup.json](https://spicetify.zgqinc.gq/Marketplace-backup.json)
+  *(Import Guide: Top Navigation `Marketplace` -> Top Right `Marketplace Settings` -> Bottom `Back up/Restore` -> `Open` -> `Import from file`. This backup already incorporates the [fix.css](fix.css) layout patches and popular themes out-of-the-box)*
 
 ## 🎯 Why Combine SpotX and Spicetify?
 

@@ -1,0 +1,143 @@
+/* Better-connect-bar Make connect bar a better look. */
+.main-connectBar-connectBar {
+    position: absolute !important;
+    overflow: visible !important;
+    left: 75% !important;
+    height: 20px !important;
+    bottom: 1% !important;
+    padding: 2px !important;
+  }
+
+/* fix-nowPlayingView */
+/* .main-nowPlayingView-nowPlayingGrid {
+    flex-direction: column !important;
+} */
+.spicy-dynamic-bg-in-this {
+    border-radius: 8px !important;
+}
+/* .main-trackInfo-name {
+    margin-left: 4px !important; */
+
+/* fix-sidebar */
+/* .BeautifulLyricsBackground:is(aside) .BeautifulLyricsBackground-Container {
+    filter: saturate(3) brightness(.25) !important;
+}
+
+.Root__right-sidebar:has(.main-nowPlayingView-section, canvas) .main-nowPlayingView-section {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+#BeautifulLyrics-CardView, .LoadingLyricsCard {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+} */
+
+/* fix-custom-app-stats */
+.page-header {
+    margin-top: 8% !important;
+}
+.main-topBar-background {
+    background: var(--background) !important;
+}
+
+/* fix-widget */
+.GenericModal {
+    background-color: transparent !important;
+}
+
+/* fix-marketplace */
+.marketplace-card-type-heading {
+    margin: 3em 0 1em !important;
+}
+
+/* fix-light-theme-button */
+/* .Root__globalNav .main-topBar-buddyFeed {
+    background: transparent !important;
+    border: none !important;
+} */
+.main-actionButtons * {
+    background: transparent !important;
+    border: none !important;
+    display: inline-block !important;
+}
+
+/* fix-dropDownMenu-color */
+.ellipsis-one-line, .standalone-ellipsis-one-line {
+    color: var(--spice-text) !important;
+}
+
+/* better-scrollbar */
+.os-scrollbar.os-scrollbar-handle-interactive .os-scrollbar-handle, .os-scrollbar.os-scrollbar-track-interactive .os-scrollbar-track {
+    border-radius: 50px !important;
+    width: 8px !important;
+}
+
+/* fix-topbar-button */
+/* .undefined {
+    all: inherit !important;
+    padding: revert !important;
+    margin-top: 50% !important;
+} */
+.custom-navlinks-scrollable_container {
+    max-width: calc(100px* var(--max-custom-navlink-count) + 100px*(var(--max-custom-navlink-count) - 1)) !important;
+}
+.main-topBar-historyButtons, .main-globalNav-historyButtons {
+    gap: 12px !important;
+}
+
+/* fix-nowPlayingBar */
+.main-nowPlayingWidget-trackInfo {
+    display: flow !important;
+    width: max-content !important;
+}
+.main-nowPlayingBar-nowPlayingBar {
+    height: auto !important;
+}
+.cover-art {
+    display: list-item !important;
+}
+/* .main-trackInfo-artists {
+    padding-left: 2px !important;
+} */
+/* svg.Svg-img-icon-small {
+    fill: currentColor !important;
+    position: absolute !important;
+    top: 5px !important;
+    right: 8px !important;
+    left: 4px !important;
+} */
+.main-nowPlayingBar-right {
+    margin-right: 10px !important;
+}
+#upcomingSongDiv {
+    padding-left: 2px !important;
+    bottom: 36px !important;
+}
+#upcomingSongTitle {
+    margin-left: 2px;
+}
+.main-trackInfo-enhanced {
+    display: block !important;
+}
+
+/* fix-tracklist */
+.main-trackList-rowSectionEnd {
+    gap: inherit !important;
+}
+
+/* useless-button */
+button#main-topBar-moon-button {
+    display: none !important;
+}
+button.main-addButton-button.control-button.control-button-heart {
+    display: inline-flex !important;
+    background-color: transparent !important;
+    border: transparent !important;
+}
+button.Button-sc-1dqy6lx-0.Button-switch-buttonTertiary-textSubdued-small-iconOnly-isUsingKeyboard-useBrowserDefaultFocusStyle-condensed {
+    display: none !important;
+}
+
+/* fix-homescreen */
+.main-home-homeHeader {
+    height: 56px !important;
+}
