@@ -68,6 +68,11 @@ iwr -useb https://spicetify.zgqinc.gq/custom-apps.ps1 | iex
 curl -fsSL https://spicetify.zgqinc.gq/custom-apps.sh | bash
 ```
 
+* **懒人美化配置文件备份：** [点击下载 Backup.json](https://spicetify.zgqinc.gq/Marketplace-backup.json)
+  *(导入方法：顶部导航栏 `Marketplace` -> 右上角 `Marketplace Settings` -> 最底部 `Back up/Restore` -> `Open` -> `Import from file`)*
+
+---
+
 ## 🎯 为什么要同时使用 SpotX 和 Spicetify？
 
 | 功能特性 | 仅装 SpotX | 仅装 Spicetify | SpotX + Spicetify（强强联手） |
