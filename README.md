@@ -173,6 +173,49 @@ graph TD
 4. **Rspack Chunk Registration**: Injects all `spicetify-routes-*.js` into Rspack's internal chunk map (`.u`) and MiniCss whitelist.
 5. **Rspack Global Hooking**: Updates `spicetifyWrapper.js` to hook `window.rspackChunk || window.rspackChunkclient_web`, ensuring `Spicetify.React` and `Spicetify.ReactDOM` are correctly bound.
 6. **Dynamic `Spicetify.URI`**: Reconnects the URI parser directly from Spotify's internal module table.
+7. **1.2.x Marketplace route/nav/stylesheet restore** ([fix-marketplace-nav.ps1](fix-marketplace-nav.ps1)): re-applies the lazy chunk, `/marketplace/*` route, nav icon and `miniCss` allowlist into the `xpui.js` the client actually loads — and into Spicetify's staging copies so it survives `spicetify apply`. Root cause in the section below.
+
+### Spotify 1.2.x: Marketplace icon / route missing after `spicetify apply` (root cause + standalone fix)
+
+On a SpotX-patched **1.2.x** client, `spicetify apply` prints `success` at every step, extensions and themes work, but
+custom apps (Marketplace) never load: no nav icon, no `/marketplace` route. Root cause, traced in
+[spicetify/cli#3922](https://github.com/spicetify/cli/issues/3922) / [SpotX#892](https://github.com/SpotX-Official/SpotX/issues/892)
+(both closed / not planned upstream):
+
+1. Spotify 1.2.64+ ships its xpui modules inside `v8_context_snapshot.bin`. Spicetify extracts them into
+   `xpui-modules.js` and rewrites `index.html` to load that file — but only if it finds a
+   `<script src="/xpui-snapshot.js">` tag (`src/apply/apply.go:216-221`).
+2. SpotX rewrites `index.html` to load `/xpui.js` and drops `xpui-snapshot.js`, so the rewrite never fires:
+   `xpui-modules.js` is never referenced and never fetched (confirmed via `performance.getEntriesByType("resource")`).
+3. `findCustomAppTarget` still picks `xpui-modules.js` (the orphan) and never considers `xpui.js`, so every custom-app
+   patch lands in a bundle the client never loads.
+4. `insertCustomAppChunkMap` targets `xpui-snapshot.js`, which doesn't exist, so it no-ops — and that is the function
+   holding the `miniCss` stylesheet allowlist. Without it the app can load but renders completely unstyled.
+
+[fix-marketplace-nav.ps1](fix-marketplace-nav.ps1) applies the four patches Spicetify would have applied, directly
+into the `xpui.js` that actually loads:
+
+| Patch | Effect |
+|---|---|
+| `spicetifyApp0 = D.lazy(...)` | loads the `spicetify-routes-marketplace` chunk |
+| `path:"/marketplace/*"` route | makes the page reachable |
+| `Spicetify._renderNavLinks(["marketplace",], true)` | draws the nav icon |
+| `"spicetify-routes-marketplace":1` in `a.f.miniCss` | lets its stylesheet load |
+
+```powershell
+# close Spotify first
+powershell -ExecutionPolicy Bypass -File .\fix-marketplace-nav.ps1
+```
+
+Properties:
+
+- **Persists across `spicetify apply`**: with no arguments it patches the live bundle *and* Spicetify's staging copies
+  (`spicetify\Extracted\Raw|Themed\xpui\xpui.js`), so the next `apply` re-emits a patched bundle.
+- **Idempotent and self-verifying**: each edit has a marker (skip if present) and a unique anchor; if an anchor
+  matches ≠ 1 times (Spotify bundle changed) the file is left untouched and the script says so.
+- **Backed up**: first write saves `<file>.prenav.bak`. Full undo: `spicetify restore backup apply`.
+- Verified on Spotify `1.2.99.317.g9bd8c54d` + Spicetify `2.44.0`, Windows 11 (2026-09-07). Re-run after a Spotify
+  update, `spicetify apply` / `backup apply` / `restore`, or a Spicetify upgrade.
 
 ## 📚 Investigative Blog Articles (In-Depth Technical Deep Dive)
 
