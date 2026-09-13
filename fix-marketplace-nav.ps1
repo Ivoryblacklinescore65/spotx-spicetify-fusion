@@ -42,8 +42,13 @@ param(
 $ErrorActionPreference = 'Stop'
 
 if (-not $Target -or $Target.Count -eq 0) {
+    $spotifyDir = Join-Path $env:APPDATA "Spotify"
+    if (-not (Test-Path $spotifyDir)) {
+        $spotifyDir = Join-Path $env:LOCALAPPDATA "Spotify"
+    }
+
     $Target = @(
-        "$env:APPDATA\Spotify\Apps\xpui\xpui.js"                  # the file Spotify loads
+        (Join-Path $spotifyDir "Apps\xpui\xpui.js")               # the file Spotify loads
         "$env:APPDATA\spicetify\Extracted\Raw\xpui\xpui.js"       # survives `spicetify apply`
         "$env:APPDATA\spicetify\Extracted\Themed\xpui\xpui.js"
     ) | Where-Object { Test-Path $_ }
